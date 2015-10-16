@@ -1,0 +1,43 @@
+aside {
+  margin-left: 20px;
+  margin-top: 10px
+}
+aside a {
+  color: inherit
+}
+menu {
+  padding: 0
+}
+
+#editLayer {
+  cursor: crosshair;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  position: absolute;
+  top: 0
+}
+#editLayer div {
+  color: #566;
+  font-size: 10px
+}
+#imgPicker, #linkPicker {
+  display: flex;
+  flex-wrap: wrap
+}
+#imgPicker a, #linkPicker a {
+  box-sizing: border-box;
+  display: block;
+  outline: none
+}
+#imgPicker a {
+  color: transparent
+}
+#imgPicker .focus, #linkPicker .focus {
+  border-bottom: 4px solid #566
+}
+#linkPicker a {
+  background: #eee;
+  color: #000;
+  text-decoration: none
+}

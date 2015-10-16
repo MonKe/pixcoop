@@ -1,0 +1,52 @@
+body {
+  align-items: center;
+  background: #111;
+  color: #888;
+  display: flex;
+  font: 14px/18px monospace;
+  justify-content: center;
+  text-align: center
+}
+h1 {
+  font: 115%/115% monospace;
+  margin-top: 10px;
+  text-align: center
+}
+
+#screen {
+  position: relative
+}
+#imgLayer {
+  background: #ccc
+}
+#linkLayer {
+  left: 0;
+  position: absolute;
+  top: 0
+}
+#linkLayer a {
+  display: block;
+  position: absolute;
+  outline: none
+}
+#linkLayer a[href="#"] {
+  cursor: default
+}
+#title {
+  background: #000;
+  color: #eee;
+  margin: 0;
+  position: absolute
+}
+
+@media (min-height: 600px) {
+  body {
+    height: 600px
+  }
+}
+@media (min-height: 900px) {
+  body {
+    height: 900px;
+    font: 18px/24px monospace
+  }
+}
