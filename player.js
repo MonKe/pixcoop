@@ -99,14 +99,18 @@ var Player = {
           // make it the right size
           IO.dom.title.setAttribute ('style', 'padding: ' + Conf.unit + 'px')
           IO.dom.title.innerHTML = e.target.title
-          // compute pos relatively to the link
-          var x = (+ e.target.style.left.slice (0, -2))
-              - Math.floor ((IO.dom.title.clientWidth - e.target.clientWidth) / 2),
-            y = (+ e.target.style.top.slice (0, -2))
-          if (y > Conf.height * Conf.unit / 3) y -= IO.dom.title.clientHeight + Conf.unit
-          else y += IO.dom.title.clientHeight - Conf.unit
-          IO.dom.title.setAttribute ('style', 'top: ' + y + 'px; left: '
-            + x + 'px; padding: ' + Conf.unit + 'px')
+          // recover computed lengths before they go bonkers
+          var titleWidth = IO.dom.title.clientWidth,
+            titleHeight = IO.dom.title.clientHeight,
+            linkWidth = +e.target.style.width.slice (0, -2),
+            linkX = +e.target.style.left.slice (0, -2) + linkWidth / 2,
+            linkY = +e.target.style.top.slice (0, -2),
+            left = Math.round (linkX - (titleWidth / 2))
+            offsetY = linkY > Conf.height * Conf.unit / 2 ?
+              -1 * (titleHeight + Conf.unit) : 2 * Conf.unit
+          IO.dom.title.setAttribute ('style',
+            'top: ' + (linkY + offsetY) + 'px; left: ' + left + 'px; padding: '
+             + Conf.unit + 'px; width: ' + titleWidth + 'px')
           IO.now.title = IO.dom.title.innerHTML
           e.target.title = ''
         }
