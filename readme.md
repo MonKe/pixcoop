@@ -10,7 +10,7 @@ pixels *are a feature*.
 This repo has a `forest` branch, which is a little example you can play by
 opening `player.html` in your browser. There.
 
-## how it's supposed to work
+## How it's supposed to work
 
 `player.js` has everything you need to read an adventure book -- it just needs
 a book and an initialization (shown in `player.html`).
@@ -38,7 +38,7 @@ I usually run them side by side:
 3. As `player.html` runs the same book as a default, you can test your adventure
   in parallel.
 
-## customizing
+## Customizing
 
 Even though it's a mess, you should be able to edit a few things:
 
@@ -48,7 +48,7 @@ Even though it's a mess, you should be able to edit a few things:
   can use it, or replace it by a *better lossless compression algorithm*. I can
   think of at list 4 of them, but I didn't go to algorithm school so they're
   still a bit beyond me.
-* the `play.js/Conf` object defines:
+* the `conf.js/Conf` object defines:
   * the size of your page.
 	*  the size of a pixel... in pixels.
 	* the different brush sizes
