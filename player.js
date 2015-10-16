@@ -107,7 +107,7 @@ var Player = {
             linkY = +e.target.style.top.slice (0, -2),
             left = Math.round (linkX - (titleWidth / 2))
             offsetY = linkY > Conf.height * Conf.unit / 2 ?
-              -1 * (titleHeight + Conf.unit) : 2 * Conf.unit
+              -1 * (titleHeight + Conf.unit) : 3 * Conf.unit
           IO.dom.title.setAttribute ('style',
             'top: ' + (linkY + offsetY) + 'px; left: ' + left + 'px; padding: '
              + Conf.unit + 'px; width: ' + titleWidth + 'px')
