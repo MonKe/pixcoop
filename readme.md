@@ -1,14 +1,17 @@
 # pixcoop
-*A tiny client-side tool based on the awesome [playpen](http://playpen.farbs.org) idea.*
+*A tiny client-side tool based on the awesome
+[playpen](http://playpen.farbs.org) idea.*
 
-Coded in a rush (3 days including *this*), meant to provide with a point-and-click adventures reader and
-a editor to make the damn things. Just in case I keep you wondering: the giant
-pixels *are a feature*.
+Coded in a rush (3 days including *this*), meant to provide with a
+point-and-click adventures reader and a editor to make the damn things. Just in
+case I keep you wondering: the giant pixels *are a feature*.
 
 ## This file is long, give me an example
 
 This repo has a `forest` branch, which is a little example you can play by
-opening `player.html` in your browser. There.
+opening `player.html` in your browser. I also made a `gh-pages` branch so you
+can play [here](http://monke.github.io/pixcoop) and edit (but not save)
+[here](http://monke.github.io/pixcoop/edit). There.
 
 ## How it's supposed to work
 
@@ -22,7 +25,8 @@ overlay. ok, still heavy enough.
 I usually run them side by side:
 
 1. I put together the `book.js` file based on what I want (size, 1st content,
-  1st page title). **Rush job: no safeguards here, careful what you input[^1].** The defaults can be a good tiny starter.
+  1st page title). **Rush job: no safeguards here, careful what you
+  input[1][].** The defaults can be a good tiny starter.
 2. I run the `maker.html` in the browser (currently firefox-only tested):
   * a click on the edit button.
   * select from the color palette and draw.
@@ -43,19 +47,21 @@ I usually run them side by side:
 Even though it's a mess, you should be able to edit a few things:
 
 * the `book.js` file: `imgMap` & `linkMap` look like chinese-encoded strings,
-  because of `lib.js/Cramm`. It's a little something I used to compress the giant char
-  matrices produced by the editor (it was really stuffy to just *review* it), it has a decode and and encode method, you
-  can use it, or replace it by a *better lossless compression algorithm*. I can
-  think of at list 4 of them, but I didn't go to algorithm school so they're
-  still a bit beyond me.
+  because of `lib.js/Cramm`. It's a little something I used to compress the
+  giant char matrices produced by the editor (it was really stuffy to just
+  *review* it), it has a decode and and encode method, you can use it, or
+  replace it by a *better lossless compression algorithm*. I can think of at
+  list 4 of them, but I didn't go to algorithm school so they're still a bit
+  beyond me.
 * the `conf.js/Conf` object defines:
   * the size of your page.
 	*  the size of a pixel... in pixels.
-	* the different brush sizes
+	* the different brush sizes.
 	* your **color palette** (16 colors only).
 
 Well I guess... Have fun!
 
-Many thanks to [Farbs](http://farbs.org/) for the original idea and allowing my rants.
+Many thanks to [Farbs](http://farbs.org/) for the original idea and allowing my
+rants.
 
-[^1]: You're gonna break everything.
+[1]: # "You're gonna break everything."
