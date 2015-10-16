@@ -8,10 +8,9 @@ case I keep you wondering: the giant pixels *are a feature*.
 
 ## This file is long, give me an example
 
-This repo has a `forest` branch, which is a little example you can play by
-opening `player.html` in your browser. I also made a `gh-pages` branch so you
-can play [here](http://monke.github.io/pixcoop) and edit (but not save)
-[here](http://monke.github.io/pixcoop/edit). There.
+ I made a `gh-pages` branch so you can play
+[here](http://monke.github.io/pixcoop) and edit (but not save)
+[here](http://monke.github.io/pixcoop/edit). There you go.
 
 ## How it's supposed to work
 
