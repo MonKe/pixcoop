@@ -55,9 +55,9 @@ Even though it's a mess, you should be able to edit a few things:
   beyond me.
 * the `conf.js/Conf` object defines:
   * the size of your page.
-	*  the size of a pixel... in pixels.
-	* the different brush sizes.
-	* your **color palette** (16 colors only).
+  *  the size of a pixel... in pixels.
+  * the different brush sizes.
+  * your **color palette** (16 colors only).
 
 Well I guess... Have fun!
 
