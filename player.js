@@ -103,7 +103,7 @@ var Player = {
           var x = (+ e.target.style.left.slice (0, -2))
               - Math.floor ((IO.dom.title.clientWidth - e.target.clientWidth) / 2),
             y = (+ e.target.style.top.slice (0, -2))
-          if (y > IO.now.book[IO.now.page].height * Conf.unit / 3) y -= IO.dom.title.clientHeight + Conf.unit
+          if (y > Conf.height * Conf.unit / 3) y -= IO.dom.title.clientHeight + Conf.unit
           else y += IO.dom.title.clientHeight - Conf.unit
           IO.dom.title.setAttribute ('style', 'top: ' + y + 'px; left: '
             + x + 'px; padding: ' + Conf.unit + 'px')
