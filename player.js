@@ -87,11 +87,12 @@ var Player = {
     var domLink = document.querySelectorAll ('#linkLayer a')
     for (var i = 0; i < domLink.length; i++) {
       domLink[i].onclick = function (e) {
-        IO.dom.title.setAttribute ('style', 'display: none')
-        e.target.title = IO.now.title
-        IO.now.title = ''
-        if (e.target.getAttribute ('href') !== '#')
+        if (e.target.getAttribute ('href') !== '#') {
+	  IO.dom.title.setAttribute ('style', 'display: none')
+	  e.target.title = IO.now.title
+	  IO.now.title = ''
           Player.setPage (e.target.getAttribute ('href').slice (1))
+        }
         return false
       }
       domLink[i].onmouseenter = function (e) {
