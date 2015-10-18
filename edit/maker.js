@@ -22,7 +22,6 @@ var Maker = {
       + (Conf.unit * 16) + 'px')
     // setup edit booleans
     IO.now.drawing = false
-    IO.now.linkDrawing = false
     // setup pickers
     // imgPicker
     document.getElementById ('imgPicker')
@@ -35,8 +34,6 @@ var Maker = {
       }).join ('')
     // imgPick btn & event
     var imgPickList = document.querySelectorAll ('#imgPicker a')
-    imgPickList[0].setAttribute ('class', 'focus')
-    IO.now.imgPick = imgPickList[0].getAttribute ('href').slice (1)
     for (var i = 0; i < imgPickList.length; i++)
       imgPickList[i].onclick = function (e) {
         El.setFocus (e.target)
@@ -78,7 +75,6 @@ var Maker = {
         return false
       }
     // linkEditor
-    IO.dom.linkEditor.innerHTML = ''
     // brushPicker
     IO.now.brush = 0
     IO.dom.brushPicker.innerHTML = 'size ' + Conf.brush.map (function (x) {
@@ -116,11 +112,18 @@ var Maker = {
     }
   },
   open: function (e) {
+    //setup editor fresh state
     IO.dom.editBtn.setAttribute ('href', '#close')
     IO.dom.editBtn.innerHTML = 'Stop edit'
     var page = IO.now.book[IO.now.page],
       imgMtx = Str.toMtx (Cramm.decode (page.imgMap), Conf.width),
       linkMtx = Str.toMtx (Cramm.decode (page.linkMap), Conf.width)
+    var imgPick = document.querySelector ('#imgPicker a')
+    El.setFocus (imgPick)
+    IO.now.imgPick = imgPick.getAttribute ('href').slice (1)
+    IO.now.linkDrawing = false
+    IO.dom.linkEditor.innerHTML = ''
+    //
     IO.dom.editLayer.setAttribute ('style', 'width: ' + Conf.width * Conf.unit
       + 'px; height: ' + Conf.height * Conf.unit + 'px')
     IO.dom.editArea.setAttribute ('style', '')
@@ -201,10 +204,9 @@ var Maker = {
 
 var El = {
   setFocus: function (el) {
-    var last = document.querySelector ('.focus').getAttribute ('class')
-      .replace (/ ?focus/, ''),
+    var last = document.querySelector ('.focus'),
       now = el.getAttribute ('class') + ' focus'
-    document.querySelector ('.focus').setAttribute ('class', last)
+    if (last) last.setAttribute ('class', last.getAttribute ('class').replace (/ ?focus/, ''))
     el.setAttribute ('class', now)
   }
 }
