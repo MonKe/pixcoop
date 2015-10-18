@@ -194,7 +194,7 @@ var Maker = {
   saveLink: function () {
     var inputList = document.querySelectorAll ('#linkEditor input'),
       title = inputList[0].value, page = inputList[1].value
-    if (! IO.now.book[page]) IO.now.book[page] = Maker.makePage ()
+    if (page && ! IO.now.book[page]) IO.now.book[page] = Maker.makePage ()
     IO.now.book[IO.now.page].linkPal[IO.now.linkPick] = { title: title, page: page }
   }
 }
